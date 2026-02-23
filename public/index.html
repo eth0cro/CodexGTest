@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guest Portal</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <h1>Guest-Portal</h1>
+        <select id="langSelect" aria-label="Language">
+          <option value="hr">HR</option>
+          <option value="en">EN</option>
+          <option value="de">DE</option>
+          <option value="it">IT</option>
+          <option value="cs">CS</option>
+          <option value="pl">PL</option>
+          <option value="hu">HU</option>
+        </select>
+      </header>
+
+      <nav class="tabs" id="tabs"></nav>
+
+      <section id="tab-welcome" class="tab-content">
+        <h2 data-i18n="welcome.title">Dobrodošli</h2>
+        <p data-i18n="welcome.text">Dragi gosti, dobro došli. Želimo vam ugodan boravak.</p>
+      </section>
+
+      <section id="tab-rules" class="tab-content hidden">
+        <h2 data-i18n="rules.title">Pravila</h2>
+        <p data-i18n="rules.text">Molimo poštujte kućni red i tišinu nakon 22:00.</p>
+      </section>
+
+      <section id="tab-reco" class="tab-content hidden">
+        <h2 data-i18n="reco.title">Preporuke</h2>
+        <p data-i18n="reco.text">Preporučujemo šetnicu uz more i lokalne restorane.</p>
+      </section>
+
+      <section id="tab-info" class="tab-content hidden">
+        <h2 data-i18n="info.title">Informacije</h2>
+        <p data-i18n="info.text">Wi‑Fi i kontakt informacije su dostupne kod domaćina.</p>
+      </section>
+
+      <section id="tab-gate" class="tab-content hidden">
+        <h2 id="openTabTitle">Otvori portun</h2>
+        <input id="pin" maxlength="6" placeholder="PIN" inputmode="numeric" />
+        <button id="openBtn" class="gate-btn" disabled>
+          <span class="gate-icon" id="gateIcon"></span>
+          <span data-i18n="gate.button">Open Gate</span>
+        </button>
+        <p id="msg" class="msg"></p>
+        <div id="validityBadge" class="validity hidden"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guest Portal Admin</title>
+    <style>
+      body { font-family: Inter, Arial, sans-serif; margin: 16px; max-width: 760px; }
+      .hidden { display: none; }
+      .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+      label { display: block; margin-top: 8px; }
+      input, select, button { font-size: 16px; padding: 10px; margin-top: 4px; border-radius: 8px; }
+      button { cursor: pointer; }
+      #status, #error { margin-top: 12px; }
+      #error { color: #c21807; }
+      #status { color: #0a5; }
+      li { margin-bottom: 10px; }
+      code { font-size: 18px; font-weight: bold; }
+      .meta { color: #666; font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <h1>Admin Panel</h1>
+
+    <section id="loginCard" class="card hidden">
+      <h2>Login required</h2>
+      <label>
+        Password
+        <input id="passwordInput" type="password" autocomplete="current-password" />
+      </label>
+      <button id="loginBtn">Login</button>
+      <div id="loginError"></div>
+    </section>
+
+    <section id="adminCard" class="card hidden">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+        <h2 style="margin:0;">PIN Management</h2>
+        <button id="logoutBtn" type="button">Logout</button>
+      </div>
+
+      <label>
+        Start
+        <input id="startInput" type="datetime-local" />
+      </label>
+      <label>
+        End
+        <input id="endInput" type="datetime-local" />
+      </label>
+      <label>
+        Digits
+        <select id="digitsInput">
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </label>
+      <label>
+        Type
+        <select id="typeInput">
+          <option value="Obitelj">Obitelj</option>
+          <option value="Apartman A0">Apartman A0</option>
+          <option value="Apartman A1">Apartman A1</option>
+          <option value="Prijatelji">Prijatelji</option>
+        </select>
+      </label>
+
+      <button id="generateBtn" type="button">Generate PIN</button>
+      <div id="status"></div>
+      <div id="error"></div>
+
+      <h3>Pins</h3>
+      <ul id="pinsList"></ul>
+    </section>
+
+    <script src="/admin.js"></script>
+  </body>
+</html>
